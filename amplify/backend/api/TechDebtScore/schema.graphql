@@ -1,0 +1,13 @@
+type OrganizationScore @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  organizationName: String
+  createDate: AWSDateTime
+  scoreCode: Int
+  scoreModularity: Int
+  scoreCicd: Int
+  scoreEosl: Int
+  scoreDocs: Int
+  scoreHomogenity: Int
+  scoreComplexity: Int
+  scoreTests: Int
+}

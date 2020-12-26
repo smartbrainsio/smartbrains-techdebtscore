@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-techdebtscore-staging-212812-authRole",
+      "UnauthRoleArn": "arn:aws:iam::796088160558:role/amplify-techdebtscore-staging-212812-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::796088160558:role/amplify-techdebtscore-staging-212812-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-techdebtscore-staging-212812-deployment",
+      "UnauthRoleName": "amplify-techdebtscore-staging-212812-unauthRole",
+      "StackName": "amplify-techdebtscore-staging-212812",
+      "StackId": "arn:aws:cloudformation:us-east-1:796088160558:stack/amplify-techdebtscore-staging-212812/42423eb0-47c1-11eb-8ce4-0e353767367b",
+      "AmplifyAppId": "d1vs8by87z5otq"
+    }
+  }
+}
