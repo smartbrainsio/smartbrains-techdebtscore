@@ -4,8 +4,9 @@ import { schema } from './schema';
 
 
 
-const { OrganizationScore } = initSchema(schema);
+const { ScoreFeature, OrganizationScore } = initSchema(schema);
 
 export {
+  ScoreFeature,
   OrganizationScore
 };
