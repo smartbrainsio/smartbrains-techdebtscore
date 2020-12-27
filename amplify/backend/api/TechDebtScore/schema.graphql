@@ -14,4 +14,9 @@ type OrganizationScore @model @auth(rules: [{allow: public}]) {
   orgScore: Int
   ScoreFeatures: [ScoreFeature] @connection(keyName: "byOrganizationScore", fields: ["id"])
 }
- 
+
+type Feature @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  description: String
+} 
