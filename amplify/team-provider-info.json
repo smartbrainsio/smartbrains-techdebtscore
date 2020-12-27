@@ -10,6 +10,11 @@
       "StackName": "amplify-techdebtscore-staging-212812",
       "StackId": "arn:aws:cloudformation:us-east-1:796088160558:stack/amplify-techdebtscore-staging-212812/42423eb0-47c1-11eb-8ce4-0e353767367b",
       "AmplifyAppId": "d1vs8by87z5otq"
+    },
+    "categories": {
+      "auth": {
+        "TechDebtScore": {}
+      }
     }
   }
 }

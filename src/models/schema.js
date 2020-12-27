@@ -24,57 +24,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "scoreCode": {
-                    "name": "scoreCode",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "scoreModularity": {
-                    "name": "scoreModularity",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "scoreCicd": {
-                    "name": "scoreCicd",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "scoreEosl": {
-                    "name": "scoreEosl",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "scoreDocs": {
-                    "name": "scoreDocs",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "scoreHomogenity": {
-                    "name": "scoreHomogenity",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "scoreComplexity": {
-                    "name": "scoreComplexity",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "scoreTests": {
-                    "name": "scoreTests",
+                "orgScore": {
+                    "name": "orgScore",
                     "isArray": false,
                     "type": "Int",
                     "isRequired": false,
@@ -109,5 +60,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "d24c5bec032cb8c8278fc01800fb4391"
+    "version": "f177e8151678d0d93dce95425e9f3863"
 };
