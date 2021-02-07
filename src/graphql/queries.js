@@ -155,6 +155,7 @@ export const getFeature = /* GraphQL */ `
       id
       name
       description
+      weight
       _version
       _deleted
       _lastChangedAt
@@ -174,6 +175,7 @@ export const listFeatures = /* GraphQL */ `
         id
         name
         description
+        weight
         _version
         _deleted
         _lastChangedAt
@@ -202,6 +204,7 @@ export const syncFeatures = /* GraphQL */ `
         id
         name
         description
+        weight
         _version
         _deleted
         _lastChangedAt

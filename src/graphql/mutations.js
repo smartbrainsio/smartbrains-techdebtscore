@@ -136,6 +136,7 @@ export const createFeature = /* GraphQL */ `
       id
       name
       description
+      weight
       _version
       _deleted
       _lastChangedAt
@@ -153,6 +154,7 @@ export const updateFeature = /* GraphQL */ `
       id
       name
       description
+      weight
       _version
       _deleted
       _lastChangedAt
@@ -170,6 +172,7 @@ export const deleteFeature = /* GraphQL */ `
       id
       name
       description
+      weight
       _version
       _deleted
       _lastChangedAt

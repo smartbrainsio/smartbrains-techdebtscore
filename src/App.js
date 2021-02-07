@@ -3,23 +3,37 @@ import './App.css';
 import { API } from 'aws-amplify';
 import logo from './logo.svg';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
-import { listOrganizationScores } from './graphql/queries';
+import { listOrganizationScores, listFeatures, listScoreFeatures } from './graphql/queries';
 import { createOrganizationScore as createOrganizationScoreMutation, deleteOrganizationScore as deleteOrganizationScoreMutation } from './graphql/mutations';
 
-const initialFormState = { organizationName: '', orgScore: '' }
+const initialFormState = { organizationName: '', orgScore: '', scoreFeatureValues: [] }
 
 function App() {
 
   const [organizationScores, setOrganizationScores] = useState([]);
+  const [scoreFeatures, setScoreFeatures] = useState([]);
+  const [features, setFeatures] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
     fetchOrganizationScores();
+    fetchScoreFeatures();
+    fetchFeatures();
   }, []);
 
   async function fetchOrganizationScores() {
     const apiData = await API.graphql({ query: listOrganizationScores });
     setOrganizationScores(apiData.data.listOrganizationScores.items);
+  }
+
+  async function fetchScoreFeatures() {
+    const apiData = await API.graphql({ query: listScoreFeatures });
+    setScoreFeatures(apiData.data.listScoreFeatures.items);
+  }
+
+  async function fetchFeatures() {
+    const apiData = await API.graphql({ query: listFeatures });
+    setFeatures(apiData.data.listFeatures.items);
   }
 
   async function createOrganizationScore() {
@@ -46,6 +60,15 @@ function App() {
         placeholder="Organization name"
         value={formData.organizationName}
       />
+      {
+        features.map(feature => (
+          <input
+            onChange={e => setFormData({ ...formData, name: e.target.value})}
+            placeholder={feature.name}
+            value={formData.scoreFeatureValues}
+          />
+          ))
+      }
       <input
         onChange={e => setFormData({ ...formData, 'orgScore': e.target.value})}
         placeholder="Score"
