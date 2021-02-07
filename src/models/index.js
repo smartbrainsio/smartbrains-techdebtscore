@@ -4,9 +4,11 @@ import { schema } from './schema';
 
 
 
-const { ScoreFeature, OrganizationScore } = initSchema(schema);
+const { Organization, OrganizationScore, ScoreFeature, Feature } = initSchema(schema);
 
 export {
+  Organization,
+  OrganizationScore,
   ScoreFeature,
-  OrganizationScore
+  Feature
 };
