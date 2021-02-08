@@ -3,23 +3,30 @@ import './App.css';
 import { API } from 'aws-amplify';
 import logo from './logo.svg';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
-import { listOrganizationScores, listFeatures, listScoreFeatures } from './graphql/queries';
-import { createOrganizationScore as createOrganizationScoreMutation, deleteOrganizationScore as deleteOrganizationScoreMutation } from './graphql/mutations';
+import { listOrganizations, listOrganizationScores, listFeatures, listScoreFeatures } from './graphql/queries';
+import { createOrganization as createOrganizationScoreMutation, createOrganizationScore as createOrganizationScoreMutation, deleteOrganizationScore as deleteOrganizationScoreMutation } from './graphql/mutations';
 
 const initialFormState = { organizationName: '', orgScore: '', scoreFeatureValues: [] }
 
 function App() {
 
+  const [organizations, setOrganizations] = useState([]);
   const [organizationScores, setOrganizationScores] = useState([]);
   const [scoreFeatures, setScoreFeatures] = useState([]);
   const [features, setFeatures] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
+    fetchOrganizations();
     fetchOrganizationScores();
     fetchScoreFeatures();
     fetchFeatures();
   }, []);
+
+  async function fetchOrganizations() {
+    const apiData = await API.graphql({ query: listOrganizations });
+    setOrganizations(apiData.data.listOrganizations.items);
+  }
 
   async function fetchOrganizationScores() {
     const apiData = await API.graphql({ query: listOrganizationScores });
@@ -78,8 +85,8 @@ function App() {
       <div style={{marginBottom: 30}}>
         {
           organizationScores.map(organizationScore => (
-            <div key={organizationScore.id || organizationScore.organizationName}>
-              <h2>{organizationScore.organizationName}</h2>
+            <div key={organization.id || organization.organizationName}>
+              <h2>{organization.organizationName}</h2>
               <p>{organizationScore.orgScore}</p>
               <button onClick={() => deleteOrganizationScore(organizationScore)}>Delete Score</button>
             </div>
