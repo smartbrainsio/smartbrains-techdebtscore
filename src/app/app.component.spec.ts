@@ -24,7 +24,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('SmartBrains.io Demo!');
+    expect(compiled.querySelector('h1').textContent).toContain('SmartBrains.io Score');
   }));
   it('should fetch data from backend', async(() => {
     const http = TestBed.get(HttpTestingController);

@@ -1,10 +1,38 @@
 <div style="text-align:center"class="container">
   <h1>
-    SmartBrains.io {{title}}!
+    {{title}}
   </h1>
   <div class="container">
     <p>Id: <span>{{data['id']}}</span></p>
     <p>Message: <span>{{data['content']}}</span></p>
   </div>
-</div>
 
+  <!--The content below is only a placeholder and can be replaced.-->
+  <div class="container" style="width: 100%;">
+    <div style="width: 50%; height: 100px; float: left;"> 
+
+      <div id="historychart">
+        <apx-chart
+          [series]="historyChartOptions.series"
+          [chart]="historyChartOptions.chart"
+          [xaxis]="historyChartOptions.xaxis"
+          [title]="historyChartOptions.title"
+        ></apx-chart>
+      </div>
+
+    </div>
+    <div style="margin-left: 50%; height: 100px;"> 
+
+      <div id="chart">
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [xaxis]="chartOptions.xaxis"
+          [title]="chartOptions.title"
+        ></apx-chart>
+      </div>
+
+    </div>
+  </div>
+
+</div>
