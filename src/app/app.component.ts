@@ -54,6 +54,13 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {
 
+    //Get the data
+    http.get('/feature/dashboard').subscribe(data => this.data = data);
+
+    console.log('This Data: ' + this.data);
+    console.log('This Data ZERO: ' + this.data[0]);
+    console.log('This Data JSON: ' + JSON.stringify(this.data));
+
     this.chartOptions = {
       series: [
         {
@@ -70,6 +77,16 @@ export class AppComponent {
       },
       xaxis: {
         categories: [
+                     this.data['features'][0]['name'],
+                     this.data['features'][1]['name'],
+                     this.data['features'][2]['name'],
+                     this.data['features'][3]['name'],
+                     this.data['features'][4]['name'],
+                     this.data['features'][5]['name'],
+                     this.data['features'][6]['name'],
+                     this.data['features'][7]['name']
+
+                     /*
                      "Code Style & Formatting", 
                      "Modularity & Coupling", 
                      "Test Coverage & Automation", 
@@ -78,6 +95,8 @@ export class AppComponent {
                      "Documentation",
                      "Homogenity of Tech Stack",
                      "Architectural Complexity"
+                     */
+
                     ]
       }
     };
@@ -163,8 +182,6 @@ export class AppComponent {
         offsetX: 40
       }
     };
-
-    http.get('resource').subscribe(data => this.data = data);
 
   }
 }
