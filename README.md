@@ -5,6 +5,8 @@
 
 Tech Debt Score is a simple and subjective model used to measure and visualize your organization's holistic technical debt.  Based on the user's input, the model will produce a score in the range of 0-800.  0 indicates low technical debt management maturity.  Conversely, 800 indicates high technical debt management maturity.
 
+Each of the 8 featureis in the model has a weight.  Not all features are weighted equally.
+
 ### Visualization
 
 Tech Debt Score uses a radar plot to visualize the model the calculated score.
