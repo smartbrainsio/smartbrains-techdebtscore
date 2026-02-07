@@ -6,3 +6,8 @@ node_modules/
 .vscode/launch.json
 .vscode/tasks.json
 .eslintcache
+
+# Local environment configuration (contains secrets)
+application-local.properties
+.env
+.env.local
