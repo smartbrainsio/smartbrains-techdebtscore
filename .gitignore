@@ -11,3 +11,23 @@ node_modules/
 application-local.properties
 .env
 .env.local
+
+# Maven
+target/
+.mvn/
+
+# Angular
+.angular/
+
+# Frontend Maven Plugin
+node/
+
+# Logs
+*.log
+app.log
+
+# macOS
+.DS_Store
+
+# Office temp files
+~$*
