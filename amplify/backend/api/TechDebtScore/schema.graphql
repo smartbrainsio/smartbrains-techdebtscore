@@ -1,7 +1,0 @@
-type OrganizationScore @model @auth(rules: [{allow: public}]) {
-  id: ID!
-  organizationName: String
-  createDate: AWSDateTime
-  orgScore: Int
-}
- 

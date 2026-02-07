@@ -1,20 +1,33 @@
-
-
-#amplify
-amplify/\#current-cloud-backend
-amplify/.config/local-*
-amplify/logs
-amplify/mock-data
-amplify/backend/amplify-meta.json
-amplify/backend/awscloudformation
-amplify/backend/.temp
 build/
 dist/
 node_modules/
-aws-exports.js
-awsconfiguration.json
-amplifyconfiguration.json
-amplify-build-config.json
-amplify-gradle-config.json
-amplifytools.xcconfig
 .secret-*
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.eslintcache
+
+# Local environment configuration (contains secrets)
+application-local.properties
+.env
+.env.local
+
+# Maven
+target/
+.mvn/
+
+# Angular
+.angular/
+
+# Frontend Maven Plugin
+node/
+
+# Logs
+*.log
+app.log
+
+# macOS
+.DS_Store
+
+# Office temp files
+~$*
