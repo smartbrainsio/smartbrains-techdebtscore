@@ -1,9 +1,9 @@
 package io.smartbrains.techdebtscore.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Feature {
@@ -41,14 +41,14 @@ public class Feature {
     }
 
     public void setValue(String v) {
-        if (v != null) {
+        if (v != null && !v.trim().isEmpty()) {
             try {
-                this.value = new Double(v);
-            } catch (Exception e) {
-                this.value = new Double("0");
+                this.value = Double.valueOf(v);
+            } catch (NumberFormatException e) {
+                this.value = 0.0;
             }
         } else {
-            this.value = new Double("0");
+            this.value = 0.0;
         }
     }
 
@@ -61,14 +61,14 @@ public class Feature {
     }
 
     public void setWeight(String w) {
-        if (w != null) {
+        if (w != null && !w.trim().isEmpty()) {
             try {
-                this.weight = new Double(w);
-            } catch (Exception e) {
-                this.weight = new Double("0");
+                this.weight = Double.valueOf(w);
+            } catch (NumberFormatException e) {
+                this.weight = 0.0;
             }
         } else {
-            this.weight = new Double("0");
+            this.weight = 0.0;
         }
     }
 
@@ -81,14 +81,14 @@ public class Feature {
     }
    
     public void setStatus(String s) {
-        if (s != null) {
+        if (s != null && !s.trim().isEmpty()) {
             try {
-                this.status = new Integer(s);
-            } catch (Exception e) {
-                this.status = new Integer("0");
+                this.status = Integer.valueOf(s);
+            } catch (NumberFormatException e) {
+                this.status = 0;
             }
         } else {
-            this.status = new Integer("0");
+            this.status = 0;
         }
     }
     
