@@ -1,0 +1,31 @@
+<div class="container-fluid py-4">
+  <h1 class="text-center mb-4">Tech Debt Score</h1>
+
+  <!-- Loading State -->
+  <div *ngIf="loading" class="text-center my-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="mt-3">Loading dashboard data...</p>
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="error && !loading" class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Error Loading Dashboard</h4>
+    <p>{{ error }}</p>
+    <hr>
+    <button class="btn btn-outline-danger" (click)="loadDashboard()">
+      Retry
+    </button>
+  </div>
+
+  <!-- Dashboard Content -->
+  <div *ngIf="dashboard && !loading" class="row g-4">
+    <div class="col-lg-6">
+      <app-score-history-chart></app-score-history-chart>
+    </div>
+    <div class="col-lg-6">
+      <app-current-score-chart [features]="dashboard.features"></app-current-score-chart>
+    </div>
+  </div>
+</div>

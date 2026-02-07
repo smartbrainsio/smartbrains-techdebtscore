@@ -1,9 +1,9 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
 
-import { AppComponent } from "./app.component";
-import { HttpClientModule } from '@angular/common/http';
-import { NgApexchartsModule } from "ng-apexcharts";
+import { AppComponent } from './app.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -11,10 +11,11 @@ import { NgApexchartsModule } from "ng-apexcharts";
   ],
   imports: [
     BrowserModule,
-    NgApexchartsModule,
-    HttpClientModule
+    DashboardComponent
   ],
-  providers: [],
+  providers: [
+    provideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
